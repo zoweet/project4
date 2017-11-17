@@ -1,0 +1,20 @@
+body{
+    background-image: url("img/mainbackgroundimg.jpg") ;
+    background-size: cover ;
+    background-repeat: no-repeat ;
+}
+
+.dropdown{
+    font-size: 30px;
+    margin: 10px;
+}
+
+.courseList{
+    font-size: 30px;
+}
+
+.infoboxstuff{
+    font-size: 20px;
+}
+
+/*https://swingbyswing-b9.s3.amazonaws.com/photo/in-round/14268733/uploaded-photo63526010-480x360.png*/
