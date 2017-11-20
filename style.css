@@ -9,12 +9,21 @@ body{
     margin: 10px;
 }
 
-.courseList{
-    font-size: 30px;
+.courselist{
+    font-size: 20px;
 }
 
-.infoboxstuff{
+#infoboxstuff{
     font-size: 20px;
+    color: black;
+
+}
+a:link {
+    color: black;
+}
+
+.info{
+    box-shadow:10px 10px 5px #10003E;
 }
 
 /*https://swingbyswing-b9.s3.amazonaws.com/photo/in-round/14268733/uploaded-photo63526010-480x360.png*/
