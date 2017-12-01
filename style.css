@@ -26,4 +26,49 @@ a:link {
     box-shadow:10px 10px 5px #10003E;
 }
 
+.layout{
+    display: flex;
+
+}
+
+.column{
+    border: 1px solid #CCC;
+    width: 30px;
+    min-height: 70px;
+}
+
+
+.holderhead{
+    mid-height: 50px;
+}
+
+#teeselect{
+    height: 30px;
+    width: auto;
+}
+
+.card{
+    display: flex;
+    flex-direction: row;
+    background-color: green;
+
+
+}
+.playercolumn{
+    margin: 50px 0 0 0;
+    padding: 10px;
+}
+.scorecolumn{
+display: flex;
+    flex-direction: row;
+}
+.holeinput{
+    margin: 1px;
+    width: 30px;
+}
+.person{
+    padding: 0 5px 8px;
+
+}
+
 /*https://swingbyswing-b9.s3.amazonaws.com/photo/in-round/14268733/uploaded-photo63526010-480x360.png*/
