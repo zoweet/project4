@@ -31,10 +31,8 @@ a:link {
 
 }
 
-.column{
-    border: 1px solid #CCC;
+.golumn{
     width: 30px;
-    min-height: 70px;
 }
 
 
@@ -49,8 +47,10 @@ a:link {
 
 .card{
     display: flex;
-    flex-direction: row;
     background-color: green;
+    padding: 0 10px 0 0;
+    margin: auto;
+
 
 
 }
@@ -60,7 +60,7 @@ a:link {
 }
 .scorecolumn{
 display: flex;
-    flex-direction: row;
+    margin: 1px 1px 1px 1px;
 }
 .holeinput{
     margin: 1px;
@@ -68,7 +68,14 @@ display: flex;
 }
 .person{
     padding: 0 5px 8px;
+}
+.totalc{
+    display: flex;
+    flex-direction: column;
+    margin: 38px 0;
 
 }
-
+.delete{
+    display: flex;
+}
 /*https://swingbyswing-b9.s3.amazonaws.com/photo/in-round/14268733/uploaded-photo63526010-480x360.png*/

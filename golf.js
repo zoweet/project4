@@ -66,26 +66,26 @@ function getCourse(courseid) {
    function fillCard() {
        for(let p = 1; p <= numplayers; p++){
            console.log(p);
-               $(".playercolumn").append("<div id='pl"+p+"'><span class='fa fa-minus-circle' onclick='deleteplayer("+p+")'></span>" + "<div class='person' contenteditable='true'>Player</div>");
-               $(".totalc").append("<input class='holeinput' id='totalhole" + p + "'>");
+               $(".playercolumn").append("<div id='pl"+p+"' class=delete><span class='fa fa-minus-circle' onclick='deleteplayer(" + p + ")'></span>" + "<div class='person' contenteditable='true'>Player</div>");
+               $(".totalc").append("<input class='holeinput golumn' id='totalhole" + p + "'>");
                for(let h = 1; h <= numHoles.length; h++) {
-                   $("#golumn" + h).append("<input id='player" + p + "hole" + h + "' class='holeinput' onkeyup='updatescore(" + p + ")'>");
+                   $("#golumn" + h).append("<input id='player" + p + "hole" + h + "' class='holeinput' onkeyup='updating(" + p + ")'>");
 
                }
            }
        }
        function deleteplayer(playerId) {
            $("#pl" + playerId).remove();
-           for(var j = 1; j <= numHoles.length; j++){
-               $("#player" + playerid + "hole" + j).remove();
+           for (var j = 1; j <= numHoles.length; j++) {
+               $("#player" + playerId + "hole" + j).remove();
 
            }
-    function updatescore(playerid){
+       }
+    function updating(playerid){
                var playertotal = 0;
-               for(var t = 1; t <= numholes.length; t++){
-                  playertotal += $("#player" + playerid + "hole" +t).val();
+               for(let t = 1; t <= numHoles.length; t++){
+                  playertotal += Number($("#player" + playerid + "hole" +t).val());
                }
-    }
 
     $("#totalhole"+playerid).val(playertotal);
 
