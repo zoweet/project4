@@ -52,12 +52,14 @@ function getCourse(courseId) {
     function buildCard(mytee) {
         numHoles = currentCourse.course.holes;
         $(".scorecolumn").html("");
-        $(".playercolumn").html("");
+        $(".playercolumn").html("<div class='hpyh'><div>Holes</div><div>Par</div><div>Yards</div><div>Handicap</div> </div>");
         for(var c in numHoles){
             var holepar = currentCourse.course.holes[c].tee_boxes[mytee].par;
             var holeyards = currentCourse.course.holes[c].tee_boxes[mytee].yards;
+            var holehcp = currentCourse.course.holes[c].tee_boxes[mytee].hcp;
+
             console.log(holepar);
-            $(".scorecolumn").append("<div id='golumn" + (Number(c) + 1) + "'class='golumn'><div class='holeheader'><div class='parbox'></div> "+ (Number(c) + 1) +"</div><div>" + holepar + "</div><div class='yards'>"+ holeyards +"</div></div></div>");
+            $(".scorecolumn").append("<div id='golumn" + (Number(c) + 1) + "'class='golumn'><div class='holeheader'><div class='parbox'></div> "+ (Number(c) + 1) +"</div><div>" + holepar + "</div><div class='yards'>"+ holeyards +"</div><div class='hcp'>"+ holehcp +"</div></div></div>");
         }
 
         $(".scorecolumn").append("<div class='totalc'><div>total</div></div>");
