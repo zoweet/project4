@@ -47,14 +47,17 @@ a:link {
 
 .card{
     display: flex;
+    flex-direction: column;
     background-color: green;
     box-shadow:10px 10px 5px #10003E;
     padding: 3px 30px 0 0;
     margin: auto;
-
-
-
 }
+
+.container {
+    display: flex;
+}
+
 .playercolumn{
     margin: 60px 0 0 0;
     padding: 10px;
