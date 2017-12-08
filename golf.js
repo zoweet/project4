@@ -33,29 +33,31 @@ function informationOpening(p, myid) {
 
 }
 
-function getCourse(courseid) {
-    console.log(courseid);
+function getCourse(courseId) {
+    console.log('courseId');
     $("#teeselect").html("");
-    $.get("https://golf-courses-api.herokuapp.com/courses/" + courseid, function (data, status) {
+    $.get("https://golf-courses-api.herokuapp.com/courses/" + courseId, function (data, status) {
         currentCourse = JSON.parse(data);
+        console.log(data);
         for (let t in currentCourse.course.tee_types) {
             var teename = currentCourse.course.tee_types[t].tee_type;
             console.log(teename);
-
             $("#teeselect").append("<option value ='" + t + "'>" + teename + " </option>")
         }
 
     });
 
 }
-
+// holes par and yards and handicap section
     function buildCard(mytee) {
         numHoles = currentCourse.course.holes;
         $(".scorecolumn").html("");
+        $(".playercolumn").html("");
         for(var c in numHoles){
             var holepar = currentCourse.course.holes[c].tee_boxes[mytee].par;
+            var holeyards = currentCourse.course.holes[c].tee_boxes[mytee].yards;
             console.log(holepar);
-            $(".scorecolumn").append("<div id='golumn" + (Number(c) + 1) + "'class='golumn'><div class='holeheader'><div class='parbox'>"+ (Number(c) + 1) +"</div><div>par " + holepar + "</div></div></div>");
+            $(".scorecolumn").append("<div id='golumn" + (Number(c) + 1) + "'class='golumn'><div class='holeheader'><div class='parbox'></div> "+ (Number(c) + 1) +"</div><div>" + holepar + "</div><div class='yards'>"+ holeyards +"</div></div></div>");
         }
 
         $(".scorecolumn").append("<div class='totalc'><div>total</div></div>");
@@ -67,7 +69,8 @@ function getCourse(courseid) {
        for(let p = 1; p <= numplayers; p++){
            console.log(p);
                $(".playercolumn").append("<div id='pl"+p+"' class=delete><span class='fa fa-minus-circle' onclick='deleteplayer(" + p + ")'></span>" + "<div class='person' contenteditable='true'>Player</div>");
-               $(".totalc").append("<input class='holeinput golumn' id='totalhole" + p + "'>");
+                // $(".playercolumn").append("<div id='pl"+p+"' class=add><span class='fa fa-plus-circle' onclick='addplayer(" + p + ")'></span>" + "<div class='person' contenteditable='true'>Player</div>");
+           $(".totalc").append("<input class='holeinput ' id='totalhole" + p + "'>");
                for(let h = 1; h <= numHoles.length; h++) {
                    $("#golumn" + h).append("<input id='player" + p + "hole" + h + "' class='holeinput' onkeyup='updating(" + p + ")'>");
 
@@ -78,9 +81,18 @@ function getCourse(courseid) {
            $("#pl" + playerId).remove();
            for (var j = 1; j <= numHoles.length; j++) {
                $("#player" + playerId + "hole" + j).remove();
+               $("#totalhole" + playerId).remove();
 
            }
        }
+
+        function addplayer(playerId) {
+            $("#pl" + playerId).remove();
+            for (var j = 1; j <= numHoles.length; j++) {
+                $("#player" + playerId + "hole" + j).add();
+
+    }
+}
     function updating(playerid){
                var playertotal = 0;
                for(let t = 1; t <= numHoles.length; t++){

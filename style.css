@@ -32,7 +32,7 @@ a:link {
 }
 
 .golumn{
-    width: 30px;
+    width: 50px;
 }
 
 
@@ -48,23 +48,25 @@ a:link {
 .card{
     display: flex;
     background-color: green;
-    padding: 0 10px 0 0;
+    box-shadow:10px 10px 5px #10003E;
+    padding: 0 30px 0 0;
     margin: auto;
 
 
 
 }
 .playercolumn{
-    margin: 50px 0 0 0;
+    margin: 60px 0 0 0;
     padding: 10px;
 }
 .scorecolumn{
 display: flex;
-    margin: 1px 1px 1px 1px;
+    margin: 5px 5px 5px 5px;
 }
 .holeinput{
-    margin: 1px;
-    width: 30px;
+    margin: 0 5px;
+    width: 50px;
+    height: 50px;
 }
 .person{
     padding: 0 5px 8px;
@@ -73,9 +75,21 @@ display: flex;
     display: flex;
     flex-direction: column;
     margin: 38px 0;
+    background-color: red;
 
 }
 .delete{
     display: flex;
+    padding: 10px
 }
+
+.yard{
+    display: flex;
+    paddinng: 0 5px;
+
+}
+.holeheader{
+    padding: 0 5px;
+}
+
 /*https://swingbyswing-b9.s3.amazonaws.com/photo/in-round/14268733/uploaded-photo63526010-480x360.png*/
