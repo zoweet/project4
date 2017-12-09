@@ -4,6 +4,11 @@ body{
     background-repeat: no-repeat ;
 }
 
+.header{
+    display: flex;
+    align-items: center;
+}
+
 .dropdown{
     font-size: 30px;
     margin: 10px;
@@ -14,8 +19,11 @@ body{
 }
 
 #infoboxstuff{
+    background: rgba(255, 255, 255, 0.5);
     font-size: 20px;
     color: black;
+    text-align: center;
+    padding: 25px;
 
 }
 a:link {
@@ -28,7 +36,7 @@ a:link {
 
 .layout{
     display: flex;
-
+    flex-direction: column;
 }
 
 .golumn{
@@ -56,6 +64,7 @@ a:link {
 
 .container {
     display: flex;
+    /*margin-left: -15px;*/
 }
 
 .playercolumn{
@@ -99,5 +108,6 @@ display: flex;
     margin-top: -65px;
     padding: 0 15px;
 }
+
 
 /*https://swingbyswing-b9.s3.amazonaws.com/photo/in-round/14268733/uploaded-photo63526010-480x360.png*/
